@@ -14,7 +14,7 @@ local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
 --Properties:
 
 bmUseUI.Name = "bmUseUI"
-bmUseUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+bmUseUI.Parent = game:GetService("CoreGui")
 bmUseUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 TextLabel.Parent = bmUseUI
@@ -44,5 +44,5 @@ end
 
 while wait(5) do
     checkMarketUsesVal()
-    game:GetService("CoreGui").ScreenGui.TextLabel.Text = 6-currentUses.."Up to 0 minutes left until the next BM use!"
+    game:GetService("CoreGui"):WaitForChild("bmUseUI").TextLabel.Text = 6-currentUses.."0 minutes left until the next BM use!"
 end
